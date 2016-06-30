@@ -1,0 +1,21 @@
+<Page 
+  xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Filters" />
+  <ScrollView>
+    <StackLayout>
+
+      <Image id="imageOne" src="~/images/bart.png" height="200" stretch="aspectFit" />
+      <StackLayout width="100%" orientation="horizontal">
+        <Button class="greenBtn" text="Apply Filter" width="50%" tap="{{ effectOne }}" />
+        <Button class="redBtn" text="Reset" width="50%" tap="{{ resetImg }}" />
+      </StackLayout>
+
+      <Image id="imageTwo" src="~/images/maury.jpg" height="200" stretch="aspectFit" />
+      <StackLayout width="100%" orientation="horizontal">
+        <Button class="greenBtn" text="Apply Filter" width="50%" tap="{{ effectTwo }}" />
+        <Button class="redBtn" text="Reset" width="50%" tap="{{ resetImgTwo }}" />
+      </StackLayout>
+
+    </StackLayout> 
+  </ScrollView>
+</Page>

@@ -1,0 +1,48 @@
+{
+	"name": "nativescript-photofilters",
+	"version": "1.0.0",
+	"description": "NativeScript plugin to easily apply filters to your pictures.",
+	"main": "photofilters.js",
+	"nativescript": {
+		"platforms": {
+			"android": "2.0.0"
+		}
+	},
+	"scripts": {
+		"build": "tsc",
+    "demo.ios": "npm run preparedemo && cd demo && tns emulate ios",
+		"demo.android": "npm run preparedemo && cd demo && tns run android",
+		"preparedemo": "npm run build && cd demo && tns plugin remove nativescript-photofilters && tns plugin add .. && tns install",
+		"setup": "cd demo && npm install && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/bradmartin/nativescript-photofilters.git"
+	},
+	"keywords": [
+		"NativeScript",
+		"JavaScript",
+		"Android",
+		"TypeScript",
+		"bradmartin",
+		"thorum",
+		"Photo Filter",
+		"Editing"
+	],
+	"author": {
+		"name": "Brad Martin",
+		"email": "bradwaynemartin@gmail.com"
+	},
+	"bugs": {
+		"url": "https://github.com/bradmartin/nativescript-photofilters/issues"
+	},
+	"license": {
+		"type": "MIT",
+		"url": "https://github.com/bradmartin/nativescript-photofilters/blob/master/LICENSE"
+	},
+	"homepage": "https://github.com/bradmartin/nativescript-photofilters",
+	"readmeFilename": "README.md",
+	"devDependencies": {
+		"typescript": "^1.8.10"
+	}
+}

@@ -1,0 +1,36 @@
+import { Image } from "ui/image";
+export declare class PhotoFilters {
+    private _processor;
+    constructor();
+    private _getBitmap(img);
+    highlightImage(img: Image, color: string, radius?: number): Promise<{}>;
+    invert(img: Image): Promise<{}>;
+    greyScale(img: Image): Promise<{}>;
+    gamma(img: Image, red: number, green: number, blue: number): Promise<{}>;
+    colorFilter(img: Image, red: number, green: number, blue: number): Promise<{}>;
+    sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<{}>;
+    decreaseColorDepth(img: Image, bitOffset: number): Promise<{}>;
+    contrast(img: Image, value: number): Promise<{}>;
+    rotate(img: Image, degree: number): Promise<{}>;
+    brightness(img: Image, value: number): Promise<{}>;
+    gaussianBlur(img: Image): Promise<{}>;
+    createShadow(img: Image): Promise<{}>;
+    sharpen(img: Image, weight: number): Promise<{}>;
+    meanRemoval(img: Image): Promise<{}>;
+    smooth(img: Image, value: number): Promise<{}>;
+    emboss(img: Image): Promise<{}>;
+    engrave(img: Image): Promise<{}>;
+    boost(img: Image, type: number, percent: number): Promise<{}>;
+    roundCorner(img: Image, round: number): Promise<{}>;
+    waterMark(img: Image, watermark: string, location: android.graphics.Point, color: number, alpha: number, size: number, underline: boolean): Promise<{}>;
+    flip(img: Image, type: number): Promise<{}>;
+    tintImage(img: Image, degree: number): Promise<{}>;
+    fleaEffect(img: Image): Promise<{}>;
+    blackFilter(img: Image): Promise<{}>;
+    snowEffect(img: Image): Promise<{}>;
+    shadingFilter(img: Image, shadingColor: number): Promise<{}>;
+    saturationFilter(img: Image, level: number): Promise<{}>;
+    hueFilter(img: Image, level: number): Promise<{}>;
+    reflection(img: Image): Promise<{}>;
+    replaceColor(img: Image, fromColor: string, targetColor: string): Promise<{}>;
+}

@@ -1,0 +1,10 @@
+android {
+    productFlavors {
+        "nativescriptphotofilters" {
+            dimension "nativescriptphotofilters"
+        }
+    }
+}
+dependencies {
+    compile 'com.mukesh:photofilter:1.0.0'
+}
