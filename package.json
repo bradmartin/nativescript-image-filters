@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-image-filters",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "NativeScript plugin to easily apply filters to your pictures.",
 	"main": "imagefilters.js",
 	"nativescript": {
