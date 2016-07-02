@@ -17,6 +17,8 @@ Nativescript plugin for native image filters.
 From your command prompt/termial go to your app's root folder and execute:
 
 `tns plugin add nativescript-image-filters`
+*Not all methods have been tested - and some need to be documented and expose the native library a little better.
+If you have an issue with a filter, just create an issue and I'll fix the API.*
 
 ## Usage
 #### JS:
