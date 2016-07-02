@@ -3,19 +3,18 @@
   <ActionBar title="Filters" />
   <ScrollView>
     <StackLayout>
-
-      <Image id="imageOne" src="~/images/bart.png" height="200" stretch="aspectFit" />
+      <Image id="imageOne" src="~/images/bart.png" height="190" stretch="aspectFit" />
       <StackLayout width="100%" orientation="horizontal">
-        <Button class="greenBtn" text="Apply Filter" width="50%" tap="{{ effectOne }}" />
-        <Button class="redBtn" text="Reset" width="50%" tap="{{ resetImg }}" />
-      </StackLayout>
-
-      <Image id="imageTwo" src="~/images/maury.jpg" height="200" stretch="aspectFit" />
+        <Button class="greenBtn" text="Reflection" width="40%" tap="{{ effectReflection }}" />
+        <Button class="greenBtn" text="Grey Scale" width="40%" tap="{{ effectGreyScale }}" />
+        <Button class="redBtn" text="Reset" width="20%" tap="{{ resetImg }}" />
+      </StackLayout> 
+      <Image id="imageTwo" src="~/images/maury.jpg" height="190" stretch="aspectFit" />
       <StackLayout width="100%" orientation="horizontal">
-        <Button class="greenBtn" text="Apply Filter" width="50%" tap="{{ effectTwo }}" />
-        <Button class="redBtn" text="Reset" width="50%" tap="{{ resetImgTwo }}" />
+        <Button class="greenBtn" text="Invert" width="40%" tap="{{ effectInvert }}" />
+        <Button class="greenBtn" text="Sepia" width="40%" tap="{{ effectSepia }}" />
+        <Button class="redBtn" text="Reset" width="20%" tap="{{ resetImgTwo }}" />
       </StackLayout>
-
     </StackLayout> 
   </ScrollView>
 </Page>

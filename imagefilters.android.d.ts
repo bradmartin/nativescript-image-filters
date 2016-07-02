@@ -1,0 +1,37 @@
+import * as imageSource from "image-source";
+import { Image } from "ui/image";
+export declare class ImageFilters {
+    private _processor;
+    constructor();
+    private _getBitmap(img);
+    highlightImage(img: Image, color: string, radius?: number): Promise<imageSource.ImageSource>;
+    invert(img: Image): Promise<imageSource.ImageSource>;
+    greyScale(img: Image): Promise<imageSource.ImageSource>;
+    gamma(img: Image, red: number, green: number, blue: number): Promise<imageSource.ImageSource>;
+    colorFilter(img: Image, red: number, green: number, blue: number): Promise<imageSource.ImageSource>;
+    sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<imageSource.ImageSource>;
+    decreaseColorDepth(img: Image, bitOffset: number): Promise<imageSource.ImageSource>;
+    contrast(img: Image, value: number): Promise<imageSource.ImageSource>;
+    rotate(img: Image, degree: number): Promise<imageSource.ImageSource>;
+    brightness(img: Image, value: number): Promise<imageSource.ImageSource>;
+    gaussianBlur(img: Image): Promise<imageSource.ImageSource>;
+    createShadow(img: Image): Promise<imageSource.ImageSource>;
+    sharpen(img: Image, weight: number): Promise<imageSource.ImageSource>;
+    meanRemoval(img: Image): Promise<imageSource.ImageSource>;
+    smooth(img: Image, value: number): Promise<imageSource.ImageSource>;
+    emboss(img: Image): Promise<imageSource.ImageSource>;
+    engrave(img: Image): Promise<imageSource.ImageSource>;
+    boost(img: Image, type: number, percent: number): Promise<imageSource.ImageSource>;
+    roundCorner(img: Image, round: number): Promise<imageSource.ImageSource>;
+    waterMark(img: Image, watermark: string, location: android.graphics.Point, color: number, alpha: number, size: number, underline: boolean): Promise<imageSource.ImageSource>;
+    flip(img: Image, type: number): Promise<imageSource.ImageSource>;
+    tintImage(img: Image, degree: number): Promise<imageSource.ImageSource>;
+    fleaEffect(img: Image): Promise<imageSource.ImageSource>;
+    blackFilter(img: Image): Promise<imageSource.ImageSource>;
+    snowEffect(img: Image): Promise<imageSource.ImageSource>;
+    shadingFilter(img: Image, shadingColor: number): Promise<imageSource.ImageSource>;
+    saturationFilter(img: Image, level: number): Promise<imageSource.ImageSource>;
+    hueFilter(img: Image, level: number): Promise<imageSource.ImageSource>;
+    reflection(img: Image): Promise<imageSource.ImageSource>;
+    replaceColor(img: Image, fromColor: string, targetColor: string): Promise<imageSource.ImageSource>;
+}

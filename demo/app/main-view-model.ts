@@ -2,10 +2,10 @@ import * as imageSource from "image-source";
 import { topmost } from 'ui/frame';
 import { Image } from "ui/image";
 import { Observable, EventData } from 'data/observable';
-import { PhotoFilters } from "nativescript-photofilters";
+import { ImageFilters } from "nativescript-image-filters";
 
 export class MainViewModel extends Observable {
-  private _PhotoFilters: PhotoFilters;
+  private _ImageFilters: ImageFilters;
   private _imageOne: Image;
   private _imageTwo: Image;
 
@@ -14,7 +14,7 @@ export class MainViewModel extends Observable {
 
   constructor(imageOne: Image, imageTwo: Image) {
     super();
-    this._PhotoFilters = new PhotoFilters();
+    this._ImageFilters = new ImageFilters();
     this._imageOne = imageOne;
     this._imageTwo = imageTwo;
     this._origBmapOne = imageOne.android.getDrawable().getBitmap();
@@ -22,39 +22,53 @@ export class MainViewModel extends Observable {
   }
 
 
-  public effectOne() {
-    let pic = this._imageOne;
-
+  public effectReflection() {
     setTimeout(() => {
-      this._PhotoFilters.invert(pic).then((result) => {
+      this._ImageFilters.reflection(this._imageOne).then((result) => {
 
-        let newImageSrc = imageSource.fromNativeSource(result);
-        pic.imageSource = newImageSrc;
+        this._imageOne.imageSource = result;
+
+      }).catch((err) => { 
+        console.log('applyFilter ERROR: ' + err);
+      });
+    }, 150);
+  }
+
+  public effectGreyScale() { 
+    setTimeout(() => {
+      this._ImageFilters.greyScale(this._imageOne).then((result) => {
+
+        this._imageOne.imageSource = result;
 
       }).catch((err) => {
         console.log('applyFilter ERROR: ' + err);
       });
     }, 150);
-
   }
 
-  public effectTwo() { 
-    let pic = this._imageTwo;
-
+  public effectInvert() {
     setTimeout(() => {
-      // this._PhotoFilters.highlightImage(pic, '#ff4801', 20).then((result) => {
-      this._PhotoFilters.engrave(pic).then((result) => {
+      this._ImageFilters.invert(this._imageTwo).then((result) => {
 
-        let newImageSrc = imageSource.fromNativeSource(result);
-        pic.imageSource = newImageSrc;
+        this._imageTwo.imageSource = result;
 
       }).catch((err) => {
         console.log('applyFilter ERROR: ' + err);
       });
     }, 150);
-
   }
 
+  public effectSepia() {
+     setTimeout(() => {
+      this._ImageFilters.sepiaEffect(this._imageTwo, 150, 0.8, 0.5, 0.12).then((result) => {
+
+        this._imageTwo.imageSource = result;
+
+      }).catch((err) => {
+        console.log('applyFilter ERROR: ' + err);
+      });
+    }, 150);
+  }
 
   /**
    * name
