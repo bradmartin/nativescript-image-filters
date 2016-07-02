@@ -21,7 +21,6 @@ From your command prompt/termial go to your app's root folder and execute:
 ## Usage
 #### JS:
 ```JS
-import * as imageSource from "image-source";
 import { topmost } from 'ui/frame';
 import { ImageFilters } from 'nativescript-image-filters';
 
@@ -31,11 +30,9 @@ public effectOne() {
   let pic = topmost().currentPage.getViewById('myPicture');
 
       filters.invert(pic).then((result) => {
-      // result is the filtered bitmap - getting a new imageSource from the bitmap result
-      let newImageSrc = imageSource.fromNativeSource(result);
 
       // set the pic imageSource equal to the new imageSource
-      pic.imageSource = newImageSrc;
+      pic.imageSource = result;
 
     }).catch((err) => {
       console.log('applyFilter ERROR: ' + err);
