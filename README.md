@@ -5,6 +5,7 @@
 # NativeScript-Image-Filters
 Nativescript plugin for native image filters.
 
+*Android only* 
 
 ## Sample
 
