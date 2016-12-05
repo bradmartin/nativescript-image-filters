@@ -2,3 +2,4 @@ demo/
 screens/
 *.png
 *.log
+tsconfig.json
