@@ -2,16 +2,17 @@
   color: #000;
   font-size: 20;
   horizontal-align: center;
-  padding:20;
+  padding: 20;
 }
 
-
 .greenBtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
+  margin: 5;
 }
 
 .redBtn {
   background-color: #f44336;
   color: #fff;
+  margin: 5;
 }

@@ -1,88 +1,75 @@
-import * as imageSource from "image-source";
-import { topmost } from 'ui/frame';
-import { Image } from "ui/image";
-import { Observable, EventData } from 'data/observable';
+import { fromNativeSource } from "tns-core-modules/image-source";
+import { topmost } from "tns-core-modules/ui/frame";
+import { isAndroid, isIOS } from "tns-core-modules/platform";
+import { Image } from "tns-core-modules/ui/image";
+import { Observable, EventData } from "tns-core-modules/data/observable";
 import { ImageFilters } from "nativescript-image-filters";
 
 export class MainViewModel extends Observable {
   private _ImageFilters: ImageFilters;
-  private _imageOne: Image;
-  private _imageTwo: Image;
 
-  private _origBmapOne;
-  private _origBmapTwo;
-
-  constructor(imageOne: Image, imageTwo: Image) {
+  constructor() {
     super();
     this._ImageFilters = new ImageFilters();
-    this._imageOne = imageOne;
-    this._imageTwo = imageTwo;
-    this._origBmapOne = imageOne.android.getDrawable().getBitmap();
-    this._origBmapTwo = imageTwo.android.getDrawable().getBitmap();
   }
 
-
-  public effectReflection() {
+  public effectSharpen() {
     setTimeout(() => {
-      this._ImageFilters.reflection(this._imageOne).then((result) => {
-
-        this._imageOne.imageSource = result;
-
-      }).catch((err) => { 
-        console.log('applyFilter ERROR: ' + err);
-      });
+      const img = topmost().getViewById("imageOne") as Image;
+      this._ImageFilters.kaleidoscope(img).then(
+        result => {
+          console.log(result);
+          img.imageSource = result;
+        },
+        err => {
+          console.log("applyFilter ERROR: " + err);
+        }
+      );
     }, 150);
   }
 
-  public effectGreyScale() { 
+  public doBlackWhite() {
     setTimeout(() => {
-      this._ImageFilters.greyScale(this._imageOne).then((result) => {
-
-        this._imageOne.imageSource = result;
-
-      }).catch((err) => {
-        console.log('applyFilter ERROR: ' + err);
-      });
+      const img = topmost().getViewById("imageOne") as Image;
+      this._ImageFilters.blackAndWhite(img).then(
+        result => {
+          console.log(result);
+          img.imageSource = result;
+        },
+        err => {
+          console.log("applyFilter ERROR: " + err);
+        }
+      );
     }, 150);
   }
 
   public effectInvert() {
     setTimeout(() => {
-      this._ImageFilters.invert(this._imageTwo).then((result) => {
+      const img = topmost().getViewById("imageTwo") as Image;
 
-        this._imageTwo.imageSource = result;
-
-      }).catch((err) => {
-        console.log('applyFilter ERROR: ' + err);
-      });
+      this._ImageFilters.invert(img).then(
+        result => {
+          img.imageSource = result;
+        },
+        err => {
+          console.log("applyFilter ERROR: " + err);
+        }
+      );
     }, 150);
   }
 
   public effectSepia() {
-     setTimeout(() => {
-      this._ImageFilters.sepiaEffect(this._imageTwo, 150, 0.8, 0.5, 0.12).then((result) => {
+    setTimeout(() => {
+      const img = topmost().getViewById("imageTwo") as Image;
 
-        this._imageTwo.imageSource = result;
-
-      }).catch((err) => {
-        console.log('applyFilter ERROR: ' + err);
-      });
+      this._ImageFilters.sepiaEffect(img, 1, 0.8, 0.5, 0.12).then(
+        result => {
+          img.imageSource = result;
+        },
+        err => {
+          console.log("applyFilter ERROR: " + err);
+        }
+      );
     }, 150);
   }
-
-  /**
-   * name
-   */
-  public resetImg() {
-    let resetImgSrc = imageSource.fromNativeSource(this._origBmapOne);
-    this._imageOne.imageSource = resetImgSrc;
-  }
-
-
-  public resetImgTwo() {
-    let resetImgSrc = imageSource.fromNativeSource(this._origBmapTwo);
-    this._imageTwo.imageSource = resetImgSrc;
-  }
-
-
 }

@@ -5,23 +5,15 @@
 # NativeScript-Image-Filters
 Nativescript plugin for native image filters.
 
-*Android only* 
-
 ## Sample
 
 ![Demo](./screens/demo.gif)
-
-#### Native Library
-[Photo Filter](https://github.com/mukeshsolanki/photofilter)
 
 ### Installation
 From your command prompt/termial go to your app's root folder and execute:
 
 `tns plugin add nativescript-image-filters`
-
-*Not all methods have been tested - and some need to be documented and expose the native library a little better.
-If you have an issue with a filter, just create an issue and I'll fix the API.*
-
+ 
 ## Usage
 #### JS:
 ```JS
@@ -44,6 +36,11 @@ public effectOne() {
 }
 
 ```
+
+
+## IMPORTANT NOTE
+Not all methods have been tested. The code needs to be cleaned up to reduce duplication in methods. The methods also need to be 1:1 for common methods. Right now not all iOS & Android methods are named correctly for the image filter. Pull requests are very welcome to improve the API for this plugin.
+
 
 ## API
 

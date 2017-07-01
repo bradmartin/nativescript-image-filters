@@ -1,13 +1,15 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es5",
-        "sourceMap": true,
-        "experimentalDecorators": true,
-        "noEmitHelpers": true
-    },
-    "exclude": [
-        "node_modules",
-        "platforms"
-    ]
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "lib": ["es6", "dom"],
+    "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./node_modules/tns-core-modules/*", "./node_modules/*"]
+    }
+  },
+  "exclude": ["node_modules", "platforms"]
 }

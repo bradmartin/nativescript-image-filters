@@ -1,5 +1,14 @@
+.vs
+.vs/
+.vscode/
+*.sln
 demo/
+demo
 screens/
-*.png
-*.log
+*.gif
+screens
+*.gitattributes
+*.ts
+!*.d.ts
 tsconfig.json
+*.map

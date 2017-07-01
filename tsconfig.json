@@ -1,20 +1,20 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "removeComments": true,
-        "experimentalDecorators": true,
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "noEmitHelpers": true,
-        "declaration": true
-    },
-    "files": [
-        "demo/node_modules/tns-core-modules/tns-core-modules.d.ts",
-        "node_modules/tns-platform-declarations/android17.d.ts",
-        "node_modules/tns-platform-declarations/org.nativescript.widgets.d.ts",
-        "imagefilters.android.ts",
-        "imagefilters.ios.ts"
-    ],
-    "compileOnSave": false
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "declaration": true,
+    "noLib": false,
+    "noEmitHelpers": true,
+    "experimentalDecorators": true,
+    "lib": ["es6", "dom"],
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./node_modules/tns-core-modules/*", "./node_modules/*"]
+    }
+  },
+  "exclude": ["node_modules", "platforms", "demo"]
 }
