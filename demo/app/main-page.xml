@@ -5,7 +5,7 @@
     <StackLayout>
       <Image id="imageOne" src="~/images/bart.png" height="190" stretch="aspectFit" />
       <StackLayout width="100%" orientation="horizontal">
-        <Button class="greenBtn" text="Kaleidoscope" width="40%" tap="{{ effectSharpen }}" />
+        <Button class="greenBtn" text="Sharpen" width="40%" tap="{{ effectSharpen }}" />
         <Button class="greenBtn" text="Black White" width="40%" tap="{{ doBlackWhite }}" />
       </StackLayout>
       <Image id="imageTwo" src="~/images/maury.jpg" height="190" stretch="aspectFit" />

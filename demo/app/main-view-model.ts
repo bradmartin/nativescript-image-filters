@@ -16,7 +16,7 @@ export class MainViewModel extends Observable {
   public effectSharpen() {
     setTimeout(() => {
       const img = topmost().getViewById("imageOne") as Image;
-      this._ImageFilters.kaleidoscope(img).then(
+      this._ImageFilters.sharpen(img, 1).then(
         result => {
           console.log(result);
           img.imageSource = result;
