@@ -47,7 +47,7 @@ export declare class ImageFilters {
   waterMark(
     img: Image,
     watermark: string,
-    location: android.graphics.Point,
+    location: Point,
     color: number,
     alpha: number,
     size: number,
@@ -67,4 +67,9 @@ export declare class ImageFilters {
     fromColor: string,
     targetColor: string
   ): Promise<ImageSource>;
+}
+
+declare class Point {
+	x: number;
+	y: number;
 }
