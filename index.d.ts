@@ -1,4 +1,3 @@
-/// <reference path="node_modules/tns-platform-declarations/android.d.ts" />
 import { Image } from "tns-core-modules/ui/image";
 import { ImageSource } from "tns-core-modules/image-source";
 export declare class ImageFilters {
