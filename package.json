@@ -1,6 +1,6 @@
 {
   "name": "nativescript-image-filters",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NativeScript plugin to apply filters to your images.",
   "main": "imagefilters",
   "typings": "index.d.ts",
@@ -50,6 +50,12 @@
     "email": "bmartin@nstudio.io",
     "url": "https://github.com/bradmartin"
   },
+  "contributors": [
+    {
+      "name": "Andreas Simon",
+      "url": "https://github.com/andreassimon"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/bradmartin/nativescript-image-filters/issues"
   },
