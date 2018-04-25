@@ -10,4 +10,15 @@ demo/*.d.ts
 demo/platforms
 demo/node_modules
 node_modules
-.DS_store
+
+.DS_Store
+*.js.map
+*.tar
+*.tgz
+*.gz
+*.zip
+*.js
+*.log
+nativescript-lottie.*.d.ts
+!src/scripts/*.js
+!src/typings/**

@@ -10,13 +10,7 @@ declare namespace com {
         doGreyScale(image: Image);
         doGamma(image: Image, red: number, green: number, blue: number);
         doColorFilter(image: Image, red: number, green: number, blue: number);
-        createSepiaToningEffect(
-          image: Image,
-          depth: any,
-          red: number,
-          green: number,
-          blue: number
-        );
+        createSepiaToningEffect(image: Image, depth: any, red: number, green: number, blue: number);
         decreaseColorDepth(image: Image, bitOffset: any);
         createContrast(image: Image, value);
         createContrast(image: Image);

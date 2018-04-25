@@ -1,15 +1,16 @@
 /***************************************************************************************
-* Made for the {N} community by Brad Martin @BradWayneMartin
-* and nStudio, LLC. Contact team@nstudio.io for consulting and NativeScript + Angular training.
-* https://twitter.com/BradWayneMartin
-* https://github.com/bradmartin
-* https://bradmartin.net
-*************************************************************************************/
+ * Made for the {N} community by Brad Martin @BradWayneMartin
+ * and nStudio, LLC. Contact team@nstudio.io for consulting and NativeScript + Angular training.
+ * https://twitter.com/BradWayneMartin
+ * https://github.com/bradmartin
+ * https://bradmartin.net
+ *************************************************************************************/
+/// <reference path="./node_modules/tns-platform-declarations/ios/ios.d.ts" />
 
-import { isIOS } from "tns-core-modules/platform";
-import { Image } from "tns-core-modules/ui/image";
-import { Color } from "tns-core-modules/color";
-import { ImageSource, fromNativeSource } from "tns-core-modules/image-source";
+import { isIOS } from 'tns-core-modules/platform';
+import { Image } from 'tns-core-modules/ui/image';
+import { Color } from 'tns-core-modules/color';
+import { ImageSource, fromNativeSource } from 'tns-core-modules/image-source';
 
 export class ImageFilters {
   private _context: CIContext;
@@ -18,14 +19,11 @@ export class ImageFilters {
     this._context = new CIContext(null);
   }
 
-  public sepiaEffect(
-    img: Image,
-    intensity: number = 0.5
-  ): Promise<ImageSource> {
+  public sepiaEffect(img: Image, intensity: number = 0.5): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CISepiaTone", inputImage);
+        const filter = this._createFilter('CISepiaTone', inputImage);
         filter.setValueForKey(intensity, kCIInputIntensityKey); // set the intensity
         const result = this._processImage(filter);
         resolve(result);
@@ -39,7 +37,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIGammaAdjust", inputImage);
+        const filter = this._createFilter('CIGammaAdjust', inputImage);
         filter.setValueForKey(intensity, kCIInputBoostKey);
 
         const result = this._processImage(filter);
@@ -54,7 +52,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorInvert", inputImage);
+        const filter = this._createFilter('CIColorInvert', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -67,7 +65,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPhotoEffectChrome", inputImage);
+        const filter = this._createFilter('CIPhotoEffectChrome', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -80,7 +78,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPhotoEffectFade", inputImage);
+        const filter = this._createFilter('CIPhotoEffectFade', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -93,7 +91,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPhotoEffectInstant", inputImage);
+        const filter = this._createFilter('CIPhotoEffectInstant', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -106,7 +104,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorMonochrome", inputImage);
+        const filter = this._createFilter('CIColorMonochrome', inputImage);
         filter.setValueForKey(intensity, kCIInputIntensityKey);
 
         const result = this._processImage(filter);
@@ -121,7 +119,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIMotionBlur", inputImage);
+        const filter = this._createFilter('CIMotionBlur', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -134,7 +132,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIComicEffect", inputImage);
+        const filter = this._createFilter('CIComicEffect', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -147,7 +145,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CICrystallize", inputImage);
+        const filter = this._createFilter('CICrystallize', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -160,7 +158,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIEdges", inputImage);
+        const filter = this._createFilter('CIEdges', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -173,7 +171,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIEdgeWork", inputImage);
+        const filter = this._createFilter('CIEdgeWork', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -186,7 +184,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIGloom", inputImage);
+        const filter = this._createFilter('CIGloom', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -199,7 +197,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIHeightFieldFromMask", inputImage);
+        const filter = this._createFilter('CIHeightFieldFromMask', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -212,7 +210,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CILineOverlay", inputImage);
+        const filter = this._createFilter('CILineOverlay', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -225,7 +223,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPointillize", inputImage);
+        const filter = this._createFilter('CIPointillize', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -238,7 +236,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CISpotLight", inputImage);
+        const filter = this._createFilter('CISpotLight', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -251,7 +249,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIKaleidoscope", inputImage);
+        const filter = this._createFilter('CIKaleidoscope', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -264,7 +262,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIOpTile", inputImage);
+        const filter = this._createFilter('CIOpTile', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -277,7 +275,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPerspectiveTile", inputImage);
+        const filter = this._createFilter('CIPerspectiveTile', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -290,7 +288,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CITwirlDistortion", inputImage);
+        const filter = this._createFilter('CITwirlDistortion', inputImage);
 
         const result = this._processImage(filter);
         resolve(result);
@@ -304,7 +302,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIExposureAdjust", inputImage);
+        const filter = this._createFilter('CIExposureAdjust', inputImage);
         filter.setValueForKey(intensity, kCIInputEVKey);
 
         const result = this._processImage(filter);
@@ -319,7 +317,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorControls", inputImage);
+        const filter = this._createFilter('CIColorControls', inputImage);
         filter.setValueForKey(intensity, kCIInputBrightnessKey);
         filter.setValueForKey(1.05, kCIInputContrastKey);
 
@@ -335,7 +333,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorControls", inputImage);
+        const filter = this._createFilter('CIColorControls', inputImage);
         filter.setValueForKey(intensity * 2, kCIInputSaturationKey);
 
         const result = this._processImage(filter);
@@ -350,7 +348,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIGaussianBlur", inputImage);
+        const filter = this._createFilter('CIGaussianBlur', inputImage);
         filter.setValueForKey(radius, kCIInputRadiusKey);
 
         const result = this._processImage(filter);
@@ -365,7 +363,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPhotoEffectMono", inputImage);
+        const filter = this._createFilter('CIPhotoEffectMono', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -382,7 +380,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPhotoEffectTonal", inputImage);
+        const filter = this._createFilter('CIPhotoEffectTonal', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -395,7 +393,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CICircularWrap", inputImage);
+        const filter = this._createFilter('CICircularWrap', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -408,7 +406,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIHoleDistortion", inputImage);
+        const filter = this._createFilter('CIHoleDistortion', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -421,7 +419,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CILightTunnel", inputImage);
+        const filter = this._createFilter('CILightTunnel', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -434,7 +432,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIPinchDistortion", inputImage);
+        const filter = this._createFilter('CIPinchDistortion', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -447,7 +445,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CITorusLensDistortion", inputImage);
+        const filter = this._createFilter('CITorusLensDistortion', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -460,7 +458,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIVortexDistortion", inputImage);
+        const filter = this._createFilter('CIVortexDistortion', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -473,7 +471,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CICircularScreen", inputImage);
+        const filter = this._createFilter('CICircularScreen', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -486,7 +484,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CICMYKHalftone", inputImage);
+        const filter = this._createFilter('CICMYKHalftone', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -499,7 +497,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CILineScreen", inputImage);
+        const filter = this._createFilter('CILineScreen', inputImage);
         const result = this._processImage(filter);
         resolve(result);
       } catch (error) {
@@ -512,7 +510,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorControls", inputImage);
+        const filter = this._createFilter('CIColorControls', inputImage);
         filter.setValueForKey(intensity * 4, kCIInputContrastKey);
 
         const result = this._processImage(filter);
@@ -527,7 +525,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CISharpenLuminance", inputImage);
+        const filter = this._createFilter('CISharpenLuminance', inputImage);
         filter.setValueForKey(intensity, kCIInputSharpnessKey);
 
         const result = this._processImage(filter);
@@ -542,7 +540,7 @@ export class ImageFilters {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);
-        const filter = this._createFilter("CIColorPosterize", inputImage);
+        const filter = this._createFilter('CIColorPosterize', inputImage);
         filter.setValueForKey(intensity, kCIInputIntensityKey);
 
         const result = this._processImage(filter);
