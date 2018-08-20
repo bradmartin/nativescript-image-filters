@@ -2,5 +2,5 @@ android {
     
 }
 dependencies {
-    compile 'com.mukesh:photofilter:1.0.0'
+    compile 'com.mukesh:photofilter:1.0.3'
 }
