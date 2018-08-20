@@ -1,6 +1,11 @@
 android {
     
 }
+
+repositories {
+    maven { url "https://jitpack.io" }
+}
+
 dependencies {
-    compile 'com.mukesh:photofilter:1.0.3'
+	implementation 'com.github.mukeshsolanki:photofilter:1.0.3'
 }
