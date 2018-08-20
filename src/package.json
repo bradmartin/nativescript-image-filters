@@ -1,6 +1,6 @@
 {
   "name": "nativescript-image-filters",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "NativeScript plugin to apply filters to your images.",
   "main": "imagefilters",
   "typings": "index.d.ts",
@@ -14,9 +14,6 @@
       "pan": "true",
       "core3": "true",
       "category": "Interface"
-    },
-    "tns-ios": {
-      "version": "3.1.0"
     }
   },
   "scripts": {
@@ -25,8 +22,7 @@
     "build": "npm i && tsc && npm run build.native",
     "build.native": "node scripts/build-native.js",
     "postclone": "npm i && node scripts/postclone.js && cd ../demo && npm i && cd ../src && npm run plugin.link",
-    "test.android":
-      "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
+    "test.android": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build android && tns test android --justlaunch",
     "test.ios": "npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios && tns test ios --justlaunch",
     "tslint": "cd .. && tslint \"**/*.ts\" --config tslint.json --exclude \"**/node_modules/**\"",
     "plugin.link": "npm link && cd ../demo && npm link nativescript-yourplugin && cd ../src",
@@ -34,15 +30,16 @@
     "demo.ios": "npm i && npm run tsc && cd ../demo && tns run ios --syncAllFiles",
     "demo.android": "npm i && npm run tsc && cd ../demo && tns run android --syncAllFiles",
     "demo.reset": "cd ../demo && rimraf platforms",
-    "plugin.prepare":
-      "npm run build && cd ../demo && tns plugin remove nativescript-yourplugin && tns plugin add ../src",
-    "clean":
-      "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
+    "plugin.prepare": "npm run build && cd ../demo && tns plugin remove nativescript-yourplugin && tns plugin add ../src",
+    "clean": "cd ../demo && rimraf hooks node_modules platforms && cd ../src && rimraf node_modules && npm run plugin.link",
     "ci.tslint": "npm i && tslint '**/*.ts' --config '../tslint.json' --exclude '**/node_modules/**'",
     "prepack": "npm run build.native"
   },
   "lint-staged": {
-    "*.ts": ["prettier --write", "git add"]
+    "*.ts": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "repository": "https://github.com/bradmartin/nativescript-image-filters.git",
   "keywords": [
@@ -74,18 +71,15 @@
   "readmeFilename": "README.md",
   "devDependencies": {
     "husky": "^0.14.3",
-    "lint-staged": "^7.0.4",
-    "prettier": "^1.12.1",
-    "tns-core-modules": "^4.0.0",
-    "tns-platform-declarations": "^4.0.0",
-    "typescript": "^2.8.3",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "tns-core-modules": "^4.2.0",
+    "tns-platform-declarations": "^4.2.0",
+    "typescript": "^2.8.2",
     "tslint": "5.9.1",
     "prompt": "^1.0.0",
     "rimraf": "^2.5.0",
     "semver": "^5.5.0"
-  },
-  "peerDependencies": {
-    "tns-core-modules": "^3.0.0"
   },
   "license": "MIT",
   "dependencies": {}
