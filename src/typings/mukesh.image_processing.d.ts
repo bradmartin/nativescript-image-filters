@@ -43,6 +43,8 @@ declare namespace com {
         applyHueFilter(image: Image, level);
         applyReflection(image: Image);
         replaceColor(image: Image, fromColor: Color, targetColor: Color);
+        rotate(image: Image, degree: number);
+        doBrightness(image: Image, brightness: number);
       }
     }
   }

@@ -1,12 +1,12 @@
 /***************************************************************************************
- * Made for the {N} community by Brad Martin @BradWayneMartin
+ * Made for the {N} by Brad Martin @BradWayneMartin
  * https://twitter.com/BradWayneMartin
  * https://github.com/bradmartin
  * http://bradmartin.net
  * Open Source Lib : https://github.com/mukeshsolanki/photofilter
  *************************************************************************************/
 /// <reference path="./typings/mukesh.image_processing.d.ts" />
-/// <reference path="./node_modules/tns-platform-declarations/android/android.d.ts" />
+/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
 
 import { isAndroid } from 'tns-core-modules/platform';
 import { Image } from 'tns-core-modules/ui/image';
@@ -164,7 +164,7 @@ export class ImageFilters {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.createContrast(this._getBitmap(img), degree);
+        const bmp = this._processor.rotate(this._getBitmap(img), degree);
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -180,7 +180,7 @@ export class ImageFilters {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.createContrast(this._getBitmap(img), value);
+        const bmp = this._processor.doBrightness(this._getBitmap(img), value);
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
