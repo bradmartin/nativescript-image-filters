@@ -8,10 +8,11 @@
 /// <reference path="./typings/mukesh.image_processing.d.ts" />
 /// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
 
-import { isAndroid } from 'tns-core-modules/platform';
 import { Image } from 'tns-core-modules/ui/image';
 import { Color } from 'tns-core-modules/color';
 import { ImageSource, fromNativeSource } from 'tns-core-modules/image-source';
+
+declare const net: any;
 
 export class ImageFilters {
   private _processor: com.mukesh.image_processing.ImageProcessor;
@@ -25,8 +26,8 @@ export class ImageFilters {
    * @param { Image } img
    */
   private _getBitmap(img: Image): android.graphics.Bitmap {
-    const originalBitmap = img.android.getDrawable().getBitmap() as android.graphics.Bitmap;
-    return originalBitmap;
+    const bm = net.bradmartin.flexing.ImagesKt.getBitmapFromImageView(img.android) as android.graphics.Bitmap;
+    return bm;
   }
 
   public highlightImage(img: Image, color: string, radius: number = 5): Promise<ImageSource> {

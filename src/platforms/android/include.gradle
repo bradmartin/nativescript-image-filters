@@ -8,4 +8,5 @@ repositories {
 
 dependencies {
 	implementation 'com.github.mukeshsolanki:photofilter:1.0.3'
+	implementation 'com.github.bradmartin:flexing:0.1.30'
 }
