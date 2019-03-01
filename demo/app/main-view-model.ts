@@ -1,6 +1,4 @@
-import { fromNativeSource } from 'tns-core-modules/image-source';
 import { topmost } from 'tns-core-modules/ui/frame';
-import { isAndroid, isIOS } from 'tns-core-modules/platform';
 import { Image } from 'tns-core-modules/ui/image';
 import { Observable, EventData } from 'tns-core-modules/data/observable';
 import { ImageFilters } from 'nativescript-image-filters';

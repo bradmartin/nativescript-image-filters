@@ -4,7 +4,6 @@ import { MainViewModel } from './main-view-model';
 
 // Event handler for Page "loaded" event attached in main-page.xml
 export function pageLoaded(args: EventData) {
-  // Get the event sender
-  const page = <Page>args.object;
+  const page = args.object as Page;
   page.bindingContext = new MainViewModel();
 }
