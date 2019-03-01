@@ -1,4 +1,7 @@
 {
+  "linterOptions": {
+    "exclude": ["node_modules", "hooks", "platforms", "src/typings"]
+  },
   "rules": {
     "class-name": true,
     "comment-format": [true, "check-space"],
@@ -23,6 +26,13 @@
       }
     ],
     "variable-name": [true, "ban-keywords"],
-    "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-separator", "check-type"]
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-separator",
+      "check-type"
+    ]
   }
 }

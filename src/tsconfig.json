@@ -19,7 +19,7 @@
     "noImplicitUseStrict": false,
     "noFallthroughCasesInSwitch": true
   },
-  "exclude": ["node_modules", "demo-ng", "demo"],
+  "exclude": ["node_modules", "demo-ng", "demo", "typings"],
   "files": ["imagefilters.android.ts", "imagefilters.ios.ts"],
   "compileOnSave": false
 }
