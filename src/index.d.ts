@@ -4,12 +4,34 @@ export declare class ImageFilters {
   private _processor;
   constructor();
   private _getBitmap(img);
-  highlightImage(img: Image, color: string, radius?: number): Promise<ImageSource>;
+  blackAndWhite(img: Image): Promise<ImageSource>;
+
+  highlightImage(
+    img: Image,
+    color: string,
+    radius?: number
+  ): Promise<ImageSource>;
   invert(img: Image): Promise<ImageSource>;
   greyScale(img: Image): Promise<ImageSource>;
-  gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource>;
-  colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource>;
-  sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource>;
+  gamma(
+    img: Image,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource>;
+  colorFilter(
+    img: Image,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource>;
+  sepiaEffect(
+    img: Image,
+    depth: number,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource>;
   decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource>;
   contrast(img: Image, value: number): Promise<ImageSource>;
   rotate(img: Image, degree: number): Promise<ImageSource>;
@@ -41,7 +63,11 @@ export declare class ImageFilters {
   saturationFilter(img: Image, level: number): Promise<ImageSource>;
   hueFilter(img: Image, level: number): Promise<ImageSource>;
   reflection(img: Image): Promise<ImageSource>;
-  replaceColor(img: Image, fromColor: string, targetColor: string): Promise<ImageSource>;
+  replaceColor(
+    img: Image,
+    fromColor: string,
+    targetColor: string
+  ): Promise<ImageSource>;
 }
 
 declare class Point {
