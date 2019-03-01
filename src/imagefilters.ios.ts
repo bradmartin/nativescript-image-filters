@@ -5,11 +5,9 @@
  * https://github.com/bradmartin
  * https://bradmartin.net
  *************************************************************************************/
-/// <reference path="./node_modules/tns-platform-declarations/ios/ios.d.ts" />
+/// <reference path="./node_modules/tns-platform-declarations/ios.d.ts" />
 
-import { isIOS } from 'tns-core-modules/platform';
 import { Image } from 'tns-core-modules/ui/image';
-import { Color } from 'tns-core-modules/color';
 import { ImageSource, fromNativeSource } from 'tns-core-modules/image-source';
 
 export class ImageFilters {
@@ -19,7 +17,10 @@ export class ImageFilters {
     this._context = new CIContext(null);
   }
 
-  public sepiaEffect(img: Image, intensity: number = 0.5): Promise<ImageSource> {
+  public sepiaEffect(
+    img: Image,
+    intensity: number = 0.5
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         const inputImage = this._createCGImage(img);

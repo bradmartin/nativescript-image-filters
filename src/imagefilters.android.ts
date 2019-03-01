@@ -26,18 +26,28 @@ export class ImageFilters {
    * @param { Image } img
    */
   private _getBitmap(img: Image): android.graphics.Bitmap {
-    const bm = net.bradmartin.flexing.ImagesKt.getBitmapFromImageView(img.android) as android.graphics.Bitmap;
+    const bm = net.bradmartin.flexing.ImagesKt.getBitmapFromImageView(
+      img.android
+    ) as android.graphics.Bitmap;
     return bm;
   }
 
-  public highlightImage(img: Image, color: string, radius: number = 5): Promise<ImageSource> {
+  public highlightImage(
+    img: Image,
+    color: string,
+    radius: number = 5
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !color) {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.doHighlightImage(this._getBitmap(img), radius, new Color(color).android);
+        const bmp = this._processor.doHighlightImage(
+          this._getBitmap(img),
+          radius,
+          new Color(color).android
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -78,14 +88,24 @@ export class ImageFilters {
     });
   }
 
-  public gamma(img: Image, red: number, green: number, blue: number): Promise<ImageSource> {
+  public gamma(
+    img: Image,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !red || !green || !blue) {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.doGamma(this._getBitmap(img), red, green, blue);
+        const bmp = this._processor.doGamma(
+          this._getBitmap(img),
+          red,
+          green,
+          blue
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -94,14 +114,24 @@ export class ImageFilters {
     });
   }
 
-  public colorFilter(img: Image, red: number, green: number, blue: number): Promise<ImageSource> {
+  public colorFilter(
+    img: Image,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !red || !green || !blue) {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.doColorFilter(this._getBitmap(img), red, green, blue);
+        const bmp = this._processor.doColorFilter(
+          this._getBitmap(img),
+          red,
+          green,
+          blue
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -110,14 +140,26 @@ export class ImageFilters {
     });
   }
 
-  public sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<ImageSource> {
+  public sepiaEffect(
+    img: Image,
+    depth: number,
+    red: number,
+    green: number,
+    blue: number
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !depth || !red || !green) {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.createSepiaToningEffect(this._getBitmap(img), depth, red, green, blue);
+        const bmp = this._processor.createSepiaToningEffect(
+          this._getBitmap(img),
+          depth,
+          red,
+          green,
+          blue
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -126,14 +168,20 @@ export class ImageFilters {
     });
   }
 
-  public decreaseColorDepth(img: Image, bitOffset: number): Promise<ImageSource> {
+  public decreaseColorDepth(
+    img: Image,
+    bitOffset: number
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !bitOffset) {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.decreaseColorDepth(this._getBitmap(img), bitOffset);
+        const bmp = this._processor.decreaseColorDepth(
+          this._getBitmap(img),
+          bitOffset
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -302,7 +350,11 @@ export class ImageFilters {
     });
   }
 
-  public boost(img: Image, type: number, percent: number): Promise<ImageSource> {
+  public boost(
+    img: Image,
+    type: number,
+    percent: number
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !type || !percent) {
@@ -349,7 +401,15 @@ export class ImageFilters {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.waterMark(this._getBitmap(img), watermark, location, color, alpha, size, underline);
+        const bmp = this._processor.waterMark(
+          this._getBitmap(img),
+          watermark,
+          location,
+          color,
+          alpha,
+          size,
+          underline
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -445,7 +505,10 @@ export class ImageFilters {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.applyShadingFilter(this._getBitmap(img), shadingColor);
+        const bmp = this._processor.applyShadingFilter(
+          this._getBitmap(img),
+          shadingColor
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -461,7 +524,10 @@ export class ImageFilters {
           reject('Missing required arguments');
         }
 
-        const bmp = this._processor.applySaturationFilter(this._getBitmap(img), level);
+        const bmp = this._processor.applySaturationFilter(
+          this._getBitmap(img),
+          level
+        );
         const isrc = fromNativeSource(bmp);
         resolve(isrc);
       } catch (err) {
@@ -502,7 +568,11 @@ export class ImageFilters {
     });
   }
 
-  public replaceColor(img: Image, fromColor: string, targetColor: string): Promise<ImageSource> {
+  public replaceColor(
+    img: Image,
+    fromColor: string,
+    targetColor: string
+  ): Promise<ImageSource> {
     return new Promise((resolve, reject) => {
       try {
         if (!img || !fromColor || !targetColor) {
