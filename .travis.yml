@@ -7,7 +7,6 @@ matrix:
       script: >-
         cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint && cd
         ../demo-ng && npm run ci.tslint
-
     - stage: Build
       os: linux
       language: android
@@ -31,7 +30,6 @@ matrix:
         - pip install six
       script:
         - cd src && npm i && npm run tsc && cd ../demo && tns build ios
-
     - stage: WebPack Core
       os: osx
       env:
@@ -56,9 +54,8 @@ matrix:
       script: >-
         cd demo && npm run build.plugin && npm i && tns build android --bundle
         --env.uglify --env.snapshot
-
-
-  - os: linux
+    - stage: Tests
+    - os: linux
       language: android
       dist: precise
       jdk: oraclejdk8
