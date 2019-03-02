@@ -5,8 +5,7 @@ matrix:
       os: linux
       node_js: '10'
       script: >-
-        cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint && cd
-        ../demo-ng && npm run ci.tslint
+        cd src && npm run ci.tslint && cd ../demo && npm run ci.tslint
     - stage: Build
       os: linux
       language: android
@@ -59,7 +58,7 @@ matrix:
       language: android
       dist: precise
       jdk: oraclejdk8
-      env: 
+      env:
         - Android="UnitTests"
       before_script:
         - echo no | android create avd --force -n test -t android-21 -b armeabi-v7a
@@ -72,15 +71,15 @@ matrix:
         - travis_wait travis_retry tns test android --justlaunch
     - os: osx
       language: node_js
-      node_js: "8"
+      node_js: '8'
       jdk: oraclejdk8
-      env: 
+      env:
         - iOS="UnitTests"
       osx_image: xcode10.0
-      script: 
+      script:
         - cd src && npm i && npm run tsc && npm run tslint && cd ../demo && tns build ios
         - travis_wait travis_retry tns test ios --justlaunch
-        
+
 android:
   components:
     - tools
