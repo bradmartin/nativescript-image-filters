@@ -1,11 +1,12 @@
 [![npm](https://img.shields.io/npm/v/nativescript-image-filters.svg)](https://www.npmjs.com/package/nativescript-image-filters)
 [![npm](https://img.shields.io/npm/dt/nativescript-image-filters.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-image-filters)
+[![Build Status](https://travis-ci.org/bradmartin/nativescript-image-filters.svg?branch=master)](https://travis-ci.org/bradmartin/nativescript-image-filters)
 [![GitHub stars](https://img.shields.io/github/stars/bradmartin/nativescript-image-filters.svg)](https://github.com/bradmartin/nativescript-image-filters/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/bradmartin/nativescript-image-filters.svg)](https://github.com/bradmartin/nativescript-image-filters/network)
 [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/bradwayne88)
 
-
 # NativeScript-Image-Filters
+
 Nativescript plugin for native image filters.
 
 ## Sample
@@ -13,12 +14,15 @@ Nativescript plugin for native image filters.
 ![Demo](./screens/demo.gif)
 
 ### Installation
+
 From your command prompt/termial go to your app's root folder and execute:
 
 `tns plugin add nativescript-image-filters`
- 
+
 ## Usage
+
 #### JS:
+
 ```JS
 import { topmost } from 'ui/frame';
 import { ImageFilters } from 'nativescript-image-filters';
@@ -40,16 +44,15 @@ public effectOne() {
 
 ```
 
-
 ## IMPORTANT NOTE
-Not all methods have been tested. The code needs to be cleaned up to reduce duplication in methods. The methods also need to be 1:1 for common methods. Right now not all iOS & Android methods are named correctly for the image filter. Pull requests are very welcome to improve the API for this plugin.
 
+Not all methods have been tested. The code needs to be cleaned up to reduce duplication in methods. The methods also need to be 1:1 for common methods. Right now not all iOS & Android methods are named correctly for the image filter. Pull requests are very welcome to improve the API for this plugin.
 
 ## API
 
 - **highlightImage(img: Image, color: string, radius?: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
-- **invert(img: Image):  Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
-- **greyScale(img: Image):  Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
+- **invert(img: Image): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
+- **greyScale(img: Image): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **gamma(img: Image, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **colorFilter(img: Image, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
