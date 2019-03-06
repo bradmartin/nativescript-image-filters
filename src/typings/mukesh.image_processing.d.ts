@@ -1,3 +1,5 @@
+/// <reference path="../node_modules/tns-platform-declarations/android.d.ts" />
+
 type Image = any;
 type Color = number;
 
