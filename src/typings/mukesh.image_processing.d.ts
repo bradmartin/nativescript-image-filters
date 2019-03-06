@@ -1,5 +1,5 @@
 /// <reference path="../node_modules/tns-platform-declarations/android.d.ts" />
-
+type androidPoint = android.graphics.Point;
 type Image = any;
 type Color = number;
 
@@ -35,7 +35,7 @@ declare namespace com {
         waterMark(
           image: Image,
           watermark: string,
-          location: android.graphics.Point,
+          location: androidPoint,
           color: number,
           alpha: number,
           size: number,
