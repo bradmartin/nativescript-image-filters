@@ -2,7 +2,6 @@
 [![npm](https://img.shields.io/npm/dt/nativescript-image-filters.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-image-filters)
 [![Build Status](https://travis-ci.org/bradmartin/nativescript-image-filters.svg?branch=master)](https://travis-ci.org/bradmartin/nativescript-image-filters)
 [![GitHub stars](https://img.shields.io/github/stars/bradmartin/nativescript-image-filters.svg)](https://github.com/bradmartin/nativescript-image-filters/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/bradmartin/nativescript-image-filters.svg)](https://github.com/bradmartin/nativescript-image-filters/network)
 [![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/bradwayne88)
 
 # NativeScript-Image-Filters
