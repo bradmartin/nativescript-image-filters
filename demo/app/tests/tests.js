@@ -11,11 +11,6 @@ describe('imagefilters class', function() {
       return new ImageFilters();
     }).not.toThrow();
 
-    expect(function() {
-      var x = new ImageFilters();
-      x.boost();
-    }).toThrow();
-
     expect(new ImageFilters()).toBeDefined();
   });
 });
