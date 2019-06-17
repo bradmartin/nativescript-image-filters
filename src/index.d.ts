@@ -1,5 +1,5 @@
-import { Image } from 'tns-core-modules/ui/image';
 import { ImageSource } from 'tns-core-modules/image-source';
+import { Image } from 'tns-core-modules/ui/image';
 export declare class ImageFilters {
   private _processor;
   constructor();
@@ -12,7 +12,6 @@ export declare class ImageFilters {
     radius?: number
   ): Promise<ImageSource>;
   invert(img: Image): Promise<ImageSource>;
-  greyScale(img: Image): Promise<ImageSource>;
   gamma(
     img: Image,
     red: number,

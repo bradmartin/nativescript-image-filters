@@ -26,10 +26,10 @@ From your command prompt/termial go to your app's root folder and execute:
 import { topmost } from 'ui/frame';
 import { ImageFilters } from 'nativescript-image-filters';
 
-let filters = new ImageFilters();
+const filters = new ImageFilters();
 
 public effectOne() {
-  let pic = topmost().currentPage.getViewById('myPicture');
+  const pic = topmost().currentPage.getViewById('myPicture');
 
       filters.invert(pic).then((result) => {
 
@@ -51,7 +51,7 @@ Not all methods have been tested. The code needs to be cleaned up to reduce dupl
 
 - **highlightImage(img: Image, color: string, radius?: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **invert(img: Image): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
-- **greyScale(img: Image): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
+- **blackAndWhite(img: Image): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **gamma(img: Image, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **colorFilter(img: Image, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
 - **sepiaEffect(img: Image, depth: number, red: number, green: number, blue: number): Promise<[ImageSource](http://docs.nativescript.org/api-reference/classes/_image_source_.imagesource.html)>**
