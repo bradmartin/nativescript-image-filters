@@ -4,7 +4,9 @@
     <StackLayout>
       <Image id="imageOne" src="~/images/bart.png" height="190" stretch="aspectFit" />
       <StackLayout width="100%" orientation="horizontal">
-        <Button class="greenBtn" text="Engrave" width="45%" tap="{{ effectEngrave }}" />
+        <android>
+          <Button class="greenBtn" text="Engrave" width="45%" tap="{{ effectEngrave }}" />
+        </android>
         <Button class="greenBtn" text="Black White" width="45%" tap="{{ doBlackWhite }}" />
       </StackLayout>
       <Button text="Reset" tap="{{ resetBart }}" />

@@ -1,14 +1,7 @@
-/***************************************************************************************
- * Made for the {N} community by Brad Martin @BradWayneMartin
- * and nStudio, LLC. Contact team@nstudio.io for consulting and NativeScript + Angular training.
- * https://twitter.com/BradWayneMartin
- * https://github.com/bradmartin
- * https://bradmartin.net
- *************************************************************************************/
 /// <reference path="./node_modules/tns-platform-declarations/ios.d.ts" />
 
-import { Image } from 'tns-core-modules/ui/image';
-import { ImageSource, fromNativeSource } from 'tns-core-modules/image-source';
+import { fromNativeSource, ImageSource } from '@nativescript/core/image-source';
+import { Image } from '@nativescript/core/ui/image';
 
 export class ImageFilters {
   private _context: CIContext;

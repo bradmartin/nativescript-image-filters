@@ -1,6 +1,5 @@
-import { topmost } from 'tns-core-modules/ui/frame';
-import { Image } from 'tns-core-modules/ui/image';
-import { Observable } from 'tns-core-modules/data/observable';
+import { Image, isAndroid, Observable } from '@nativescript/core';
+import { Frame } from '@nativescript/core/ui/frame';
 import { ImageFilters } from 'nativescript-image-filters';
 
 export class MainViewModel extends Observable {
@@ -12,7 +11,7 @@ export class MainViewModel extends Observable {
   }
 
   resetBart(args) {
-    const img = topmost().getViewById('imageOne') as Image;
+    const img = Frame.topmost().getViewById('imageOne') as Image;
     img.src = null;
     setTimeout(() => {
       img.src = '~/images/bart.png';
@@ -20,7 +19,7 @@ export class MainViewModel extends Observable {
   }
 
   resetMaury(args) {
-    const img = topmost().getViewById('imageTwo') as Image;
+    const img = Frame.topmost().getViewById('imageTwo') as Image;
     img.src = null;
     setTimeout(() => {
       img.src = '~/images/maury.jpg';
@@ -28,51 +27,55 @@ export class MainViewModel extends Observable {
   }
 
   public effectEngrave() {
-    const img = topmost().getViewById('imageOne') as Image;
+    const img = Frame.topmost().getViewById('imageOne') as Image;
     this._ImageFilters.engrave(img).then(
-      result => {
+      (result) => {
         console.log(result);
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('engrave ERROR: ' + err);
       }
     );
   }
 
   public doBlackWhite() {
-    const img = topmost().getViewById('imageOne') as Image;
+    const img = Frame.topmost().getViewById('imageOne') as Image;
     this._ImageFilters.blackAndWhite(img).then(
-      result => {
+      (result) => {
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('blackAndWhite ERROR: ' + err);
       }
     );
   }
 
   public effectInvert() {
-    const img = topmost().getViewById('imageTwo') as Image;
+    const img = Frame.topmost().getViewById('imageTwo') as Image;
 
-    this._ImageFilters.invert(img).then(
-      result => {
-        img.imageSource = result;
-      },
-      err => {
-        console.log('invert ERROR: ' + err);
-      }
-    );
+    if (isAndroid) {
+      this._ImageFilters.invert(img).then(
+        (result) => {
+          img.imageSource = result;
+        },
+        (err) => {
+          console.log('invert ERROR: ' + err);
+        }
+      );
+    } else {
+      console.log('Engrave is not an iOS image filter.');
+    }
   }
 
   public effectSepia() {
-    const img = topmost().getViewById('imageTwo') as Image;
+    const img = Frame.topmost().getViewById('imageTwo') as Image;
 
     this._ImageFilters.sepiaEffect(img, 1, 0.8, 0.5, 0.12).then(
-      result => {
+      (result) => {
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('sepiaEffect ERROR: ' + err);
       }
     );

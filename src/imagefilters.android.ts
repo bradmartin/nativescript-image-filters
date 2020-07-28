@@ -8,9 +8,9 @@
 /// <reference path="./typings/mukesh.image_processing.d.ts" />
 /// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
 
-import { Image } from 'tns-core-modules/ui/image';
-import { Color } from 'tns-core-modules/color';
-import { ImageSource, fromNativeSource } from 'tns-core-modules/image-source';
+import { Color } from '@nativescript/core/color';
+import { ImageSource } from '@nativescript/core/image-source';
+import { Image } from '@nativescript/core/ui/image';
 
 declare const net: any;
 
@@ -48,7 +48,7 @@ export class ImageFilters {
           radius,
           new Color(color).android
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -64,7 +64,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.doInvert(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -80,7 +80,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.doGreyScale(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -106,7 +106,7 @@ export class ImageFilters {
           green,
           blue
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -132,7 +132,7 @@ export class ImageFilters {
           green,
           blue
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -160,7 +160,7 @@ export class ImageFilters {
           green,
           blue
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -182,7 +182,7 @@ export class ImageFilters {
           this._getBitmap(img),
           bitOffset
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -198,7 +198,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.createContrast(this._getBitmap(img), value);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -214,7 +214,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.rotate(this._getBitmap(img), degree);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -230,7 +230,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.doBrightness(this._getBitmap(img), value);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -246,7 +246,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyGaussianBlur(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -262,7 +262,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.createShadow(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -278,7 +278,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.sharpen(this._getBitmap(img), weight);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -294,7 +294,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyMeanRemoval(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -310,7 +310,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.smooth(this._getBitmap(img), value);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -326,7 +326,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.emboss(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -342,7 +342,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.engrave(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -362,7 +362,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.boost(this._getBitmap(img), type, percent);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -378,7 +378,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.roundCorner(this._getBitmap(img), round);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -410,7 +410,7 @@ export class ImageFilters {
           size,
           underline
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -426,7 +426,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.flip(this._getBitmap(img), type);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -442,7 +442,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.tintImage(this._getBitmap(img), degree);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -458,7 +458,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyFleaEffect(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -474,7 +474,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyBlackFilter(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -490,7 +490,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applySnowEffect(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -509,7 +509,7 @@ export class ImageFilters {
           this._getBitmap(img),
           shadingColor
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -528,7 +528,7 @@ export class ImageFilters {
           this._getBitmap(img),
           level
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -544,7 +544,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyHueFilter(this._getBitmap(img), level);
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -560,7 +560,7 @@ export class ImageFilters {
         }
 
         const bmp = this._processor.applyReflection(this._getBitmap(img));
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);
@@ -584,7 +584,7 @@ export class ImageFilters {
           new Color(fromColor).android,
           new Color(targetColor).android
         );
-        const isrc = fromNativeSource(bmp);
+        const isrc = new ImageSource(bmp);
         resolve(isrc);
       } catch (err) {
         reject(err);

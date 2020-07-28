@@ -1,5 +1,6 @@
-import { ImageSource } from 'tns-core-modules/image-source';
-import { Image } from 'tns-core-modules/ui/image';
+import { ImageSource } from '@nativescript/core/image-source';
+import { Image } from '@nativescript/core/ui/image';
+
 export declare class ImageFilters {
   private _processor;
   constructor();
@@ -7,9 +8,7 @@ export declare class ImageFilters {
   blackAndWhite(img: Image): Promise<ImageSource>;
 
   highlightImage(
-    img: Image,
-    color: string,
-    radius?: number
+    img: Image
   ): Promise<ImageSource>;
   invert(img: Image): Promise<ImageSource>;
   gamma(
