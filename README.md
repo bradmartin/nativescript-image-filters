@@ -1,8 +1,6 @@
+![Build CI](https://github.com/bradmartin/nativescript-image-filters/workflows/Build%20CI/badge.svg)
 [![npm](https://img.shields.io/npm/v/nativescript-image-filters.svg)](https://www.npmjs.com/package/nativescript-image-filters)
-[![npm](https://img.shields.io/npm/dt/nativescript-image-filters.svg?label=npm%20downloads)](https://www.npmjs.com/package/nativescript-image-filters)
-[![Build Status](https://travis-ci.org/bradmartin/nativescript-image-filters.svg?branch=master)](https://travis-ci.org/bradmartin/nativescript-image-filters)
 [![GitHub stars](https://img.shields.io/github/stars/bradmartin/nativescript-image-filters.svg)](https://github.com/bradmartin/nativescript-image-filters/stargazers)
-[![PayPal Donate](https://img.shields.io/badge/Donate-PayPal-ff4081.svg)](https://www.paypal.me/bradwayne88)
 
 # NativeScript-Image-Filters
 
@@ -23,13 +21,13 @@ From your command prompt/termial go to your app's root folder and execute:
 #### JS:
 
 ```JS
-import { topmost } from 'ui/frame';
+import { Frame } from '@nativescript/core/ui/frame';
 import { ImageFilters } from 'nativescript-image-filters';
 
 const filters = new ImageFilters();
 
 public effectOne() {
-  const pic = topmost().currentPage.getViewById('myPicture');
+  const pic = Frame.topmost().currentPage.getViewById('myPicture');
 
       filters.invert(pic).then((result) => {
 
