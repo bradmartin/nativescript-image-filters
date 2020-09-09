@@ -1,5 +1,4 @@
-import { ImageSource } from '@nativescript/core/image-source';
-import { Image } from '@nativescript/core/ui/image';
+import { Image, ImageSource } from '@nativescript/core';
 
 export declare class ImageFilters {
   private _processor;
@@ -7,9 +6,7 @@ export declare class ImageFilters {
   private _getBitmap(img);
   blackAndWhite(img: Image): Promise<ImageSource>;
 
-  highlightImage(
-    img: Image
-  ): Promise<ImageSource>;
+  highlightImage(img: Image): Promise<ImageSource>;
   invert(img: Image): Promise<ImageSource>;
   gamma(
     img: Image,

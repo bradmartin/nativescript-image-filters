@@ -1,7 +1,4 @@
-/// <reference path="./node_modules/tns-platform-declarations/ios.d.ts" />
-
-import { fromNativeSource, ImageSource } from '@nativescript/core/image-source';
-import { Image } from '@nativescript/core/ui/image';
+import { Image, ImageSource } from '@nativescript/core';
 
 export class ImageFilters {
   private _context: CIContext;
@@ -566,7 +563,7 @@ export class ImageFilters {
     const filteredImg = filter.valueForKey(kCIOutputImageKey);
     const outputCGImage = this._createOutputCGImage(filteredImg);
     const outputUIImage = UIImage.imageWithCGImage(outputCGImage);
-    const result = fromNativeSource(outputUIImage);
+    const result = new ImageSource(outputUIImage);
     return result;
   }
 }

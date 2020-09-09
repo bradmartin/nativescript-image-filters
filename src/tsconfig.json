@@ -1,19 +1,22 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "es2017",
+    "module": "esnext",
+    "moduleResolution": "node",
     "declaration": false,
     "removeComments": true,
     "noLib": false,
-    "skipLibCheck": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "lib": ["es6", "dom"],
     "sourceMap": true,
-    "pretty": true,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "pretty": false,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "noEmitHelpers": false,
+    "noEmitHelpers": true,
     "noEmitOnError": false,
     "noImplicitAny": false,
     "noImplicitReturns": true,
@@ -21,6 +24,5 @@
     "noFallthroughCasesInSwitch": true
   },
   "exclude": ["node_modules", "demo-ng", "demo", "typings"],
-  "files": ["imagefilters.android.ts", "imagefilters.ios.ts"],
   "compileOnSave": false
 }

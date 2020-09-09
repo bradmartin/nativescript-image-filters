@@ -1,5 +1,4 @@
-import { Image, isAndroid, Observable } from '@nativescript/core';
-import { Frame } from '@nativescript/core/ui/frame';
+import { Frame, Image, isAndroid, Observable } from '@nativescript/core';
 import { ImageFilters } from 'nativescript-image-filters';
 
 export class MainViewModel extends Observable {

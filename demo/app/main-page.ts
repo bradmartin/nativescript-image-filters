@@ -1,5 +1,4 @@
-import { EventData } from '@nativescript/core/data/observable';
-import { Page } from '@nativescript/core/ui/page';
+import { EventData, Page } from '@nativescript/core';
 import { MainViewModel } from './main-view-model';
 
 // Event handler for Page "loaded" event attached in main-page.xml

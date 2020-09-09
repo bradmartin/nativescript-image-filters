@@ -1,16 +1,4 @@
-/***************************************************************************************
- * Made for the {N} by Brad Martin @BradWayneMartin
- * https://twitter.com/BradWayneMartin
- * https://github.com/bradmartin
- * http://bradmartin.net
- * Open Source Lib : https://github.com/mukeshsolanki/photofilter
- *************************************************************************************/
-/// <reference path="./typings/mukesh.image_processing.d.ts" />
-/// <reference path="./node_modules/tns-platform-declarations/android.d.ts" />
-
-import { Color } from '@nativescript/core/color';
-import { ImageSource } from '@nativescript/core/image-source';
-import { Image } from '@nativescript/core/ui/image';
+import { Color, Image, ImageSource } from '@nativescript/core';
 
 declare const net: any;
 
