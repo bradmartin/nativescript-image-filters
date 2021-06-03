@@ -22,10 +22,10 @@ NativeScript Verion prior to 7:
 
 ## Usage
 
-#### JS:
+#### TS
 
-```JS
-import { Frame } from '@nativescript/core/ui/frame';
+```typescript
+import { Frame, ImageSource } from '@nativescript/core';
 import { ImageFilters } from 'nativescript-image-filters';
 
 const filters = new ImageFilters();
@@ -33,10 +33,10 @@ const filters = new ImageFilters();
 public effectOne() {
   const pic = Frame.topmost().currentPage.getViewById('myPicture');
 
-      filters.invert(pic).then((result) => {
+      filters.invert(pic).then((result: ImageSource) => {
 
-      // set the pic imageSource equal to the new imageSource
-      pic.imageSource = result;
+      // set the pic src equal to the new imageSource result from the filter method promise result
+      pic.src = result;
 
     }).catch((err) => {
       console.log('applyFilter ERROR: ' + err);
