@@ -25,13 +25,13 @@ NativeScript Verion prior to 7:
 #### TS
 
 ```typescript
-import { Frame, ImageSource } from '@nativescript/core';
+import { Frame, Image, ImageSource } from '@nativescript/core';
 import { ImageFilters } from 'nativescript-image-filters';
 
 const filters = new ImageFilters();
 
 public effectOne() {
-  const pic = Frame.topmost().currentPage.getViewById('myPicture');
+  const pic = Frame.topmost().getViewById('myPicture') as Image;
 
       filters.invert(pic).then((result: ImageSource) => {
 
