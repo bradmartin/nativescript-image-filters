@@ -2,26 +2,26 @@
   "description": "NativeScript Application",
   "readme": "NativeScript Application",
   "dependencies": {
+    "@nativescript/core": "~8.0.0",
     "nativescript-image-filters": "file:../src",
     "nativescript-theme-core": "~1.0.4",
-    "nativescript-unit-test-runner": "0.7.0",
-    "@nativescript/core": "7.0.0"
+    "nativescript-unit-test-runner": "0.7.0"
   },
   "devDependencies": {
-    "@nativescript/android": "7.0.0",
-    "@nativescript/types": "7.0.0",
-    "@nativescript/webpack": "~3.0.0",
+    "@nativescript/android": "8.0.0",
+    "@nativescript/types": "~8.0.0",
+    "@nativescript/webpack": "~5.0.0-beta.0",
     "jasmine-core": "3.3.0",
     "karma": "4.1.0",
     "karma-jasmine": "2.0.1",
     "karma-nativescript-launcher": "0.4.0",
     "karma-webpack": "3.0.5",
     "tslint": "~6.1.2",
-    "typescript": "^3.9.7"
+    "typescript": "~4.0.0"
   },
   "scripts": {
     "build.plugin": "cd ../src && npm run build",
     "ci.tslint": "npm i && tslint --config '../tslint.json' 'app/**/*.ts' --exclude '**/node_modules/**' --exclude '**/platforms/**'"
   },
-  "main": "app.js"
+  "main": "./app/app.ts"
 }
