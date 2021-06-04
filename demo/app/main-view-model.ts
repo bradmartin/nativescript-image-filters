@@ -6,7 +6,7 @@ import {
   Observable,
   ScrollView,
   StackLayout,
-  WrapLayout
+  WrapLayout,
 } from '@nativescript/core';
 import { ImageFilters } from 'nativescript-image-filters';
 
@@ -37,11 +37,11 @@ export class MainViewModel extends Observable {
   public effectEngrave() {
     const img = Frame.topmost().getViewById('imageOne') as Image;
     this._ImageFilters.engrave(img).then(
-      result => {
+      (result) => {
         console.log(result);
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('engrave ERROR: ' + err);
       }
     );
@@ -50,10 +50,10 @@ export class MainViewModel extends Observable {
   public doBlackWhite() {
     const img = Frame.topmost().getViewById('imageOne') as Image;
     this._ImageFilters.blackAndWhite(img).then(
-      result => {
+      (result) => {
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('blackAndWhite ERROR: ' + err);
       }
     );
@@ -64,10 +64,10 @@ export class MainViewModel extends Observable {
 
     if (isAndroid) {
       this._ImageFilters.invert(img).then(
-        result => {
+        (result) => {
           img.imageSource = result;
         },
-        err => {
+        (err) => {
           console.log('invert ERROR: ' + err);
         }
       );
@@ -80,10 +80,10 @@ export class MainViewModel extends Observable {
     const img = Frame.topmost().getViewById('imageTwo') as Image;
 
     this._ImageFilters.sepiaEffect(img, 1, 0.8, 0.5, 0.12).then(
-      result => {
+      (result) => {
         img.imageSource = result;
       },
-      err => {
+      (err) => {
         console.log('sepiaEffect ERROR: ' + err);
       }
     );
@@ -121,5 +121,42 @@ export class MainViewModel extends Observable {
     img.src = null;
     const wl = Frame.topmost().getViewById('newImageWrapLayout') as WrapLayout;
     wl.removeChild(img);
+  }
+
+  public localImageFilePathTest() {
+    const sl = Frame.topmost().getViewById('fromPathTestLayout') as StackLayout;
+
+    const imgF = ImageSource.fromFileSync('~/images/bart.png');
+    const image = new Image() as Image;
+    image.src = imgF;
+
+    sl.addChild(image);
+
+
+    setTimeout(() => {
+      // And then apply the filters like eg:
+      this._ImageFilters.blackAndWhite(image).then((res: ImageSource) => {
+        console.log(res); // this is the resulting ImageSource from the promise result
+        image.src = res;
+      });
+    }, 2000);
+  }
+
+  public localImageResourcePathTest() {
+    const sl = Frame.topmost().getViewById('fromResourceTestLayout') as StackLayout;
+    const imgR = ImageSource.fromResourceSync('icon');
+    const image = new Image() as Image;
+    image.src = imgR;
+
+    sl.addChild(image);
+
+    setTimeout(() => {
+      // And then apply the filters like eg:
+      this._ImageFilters
+        .sepiaEffect(image, 1, 0.8, 0.5, 0.12)
+        .then((res: ImageSource) => {
+          image.src = res;
+        });
+    }, 2000);
   }
 }

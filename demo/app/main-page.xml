@@ -25,6 +25,19 @@
         <Button text="Create New Image" tap="{{ createImageTap }}"></Button>
         <Button text="Reset Image" tap="{{ resetNewImage }} " />
       </StackLayout>
+
+      <StackLayout id="fromPathTestLayout">
+          
+      </StackLayout>
+      <Button text="Image From Path Test" tap="{{ localImageFilePathTest }}" />
+      
+
+       <StackLayout id="fromResourceTestLayout">
+          
+      </StackLayout>
+      <Button text="Image From Resource Test" tap="{{ localImageResourcePathTest }}" />
+      
+
     </StackLayout>
   </ScrollView>
 </Page>
